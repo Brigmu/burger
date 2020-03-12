@@ -21,7 +21,7 @@ const orm = {
         })
     },
     updateOne: function(table, cols, condStatement, condVal, cb){
-        let queryString = `UPDATE ${table} set ?? to ? WHERE ?? = ?`
+        let queryString = `UPDATE ${table} set ?? = ? WHERE ?? = ?`
 
         connection.query(queryString, [cols, true, condStatement, condVal], (err, results) => {
             if(err) throw err;

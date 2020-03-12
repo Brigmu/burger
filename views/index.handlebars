@@ -1,12 +1,32 @@
 <img>
 
 <h2>Eat Da Burger</h2>
+<ul>
+{{#each burgers}}
+    {{#unless devoured}}
+        <li>
+            <p>{{id}}: {{burger_name}}</p>
+            <button class = 'devourBtn' data-id = '{{id}}'>Devour</button>
+        </li>
+      
+    {{/unless}}
+  {{/each}}
+</ul>
 
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+      <li>
+          <p>{{id}}: {{burger_name}}</p>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
 
 
 
 <form>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="burger-text" name="name" maxlength="50">
 
     <button type = 'submit' id = 'submitBtn'>Add Burger</button>
 </form>
