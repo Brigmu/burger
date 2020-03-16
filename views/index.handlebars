@@ -1,0 +1,43 @@
+<div class='container'>
+
+  <h1>Eat Da Burger</h1>
+
+  <div class='form-div'>
+    <p>Enter the name of a burger you would like to eat, then click 'submit' to create it</p>
+    <form>
+      <input type="text" id="burger-text" name="name" maxlength="50">
+  
+      <button type='submit' id='submitBtn'>Add Burger</button>
+    </form>
+  </div>
+
+  <div class='burgers-div'>
+    <div class='burgers'>
+      {{#each burgers}}
+      {{#unless devoured}}
+      <div class='undevoured'>
+        <p>{{id}}: {{burger_name}}</p>
+        <button class='devourBtn' data-id='{{id}}'>Devour</button>
+      </div>
+
+      {{/unless}}
+      {{/each}}
+    </div>
+
+    <div class='burgers'>
+      {{#each burgers}}
+      {{#if devoured}}
+      <div class='devoured'>
+        <p>{{id}}: {{burger_name}}</p>
+      </div>
+      {{/if}}
+      {{/each}}
+    </div>
+
+  </div>
+
+
+
+  
+
+</div>
